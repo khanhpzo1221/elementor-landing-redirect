@@ -1,0 +1,61 @@
+# Hướng dẫn Public Website ra Internet với tên miền `elementor-page.org`
+
+Chúc mừng bạn đã sở hữu tên miền riêng. Để bất kỳ ai trên thế giới khi gõ tên miền này cũng truy cập được vào mã nguồn bạn đang chạy trên chính chiếc máy tính ở nhà, bạn cần cấu hình một quy trình gọi là **NAT Port Forwarding (Mở cổng mạng)**.
+
+Hiểu đơn giản, quy trình này giống như việc chỉ đường:
+`Internet` -> `Tên miền` -> `IP Wan (Modem mạng nhà bạn)` -> `Máy tính của bạn (Local IP)` -> `Ứng dụng Spring Boot`.
+
+Dưới đây là 3 bước thực hiện:
+
+---
+
+### Bước 1: Cho phép máy tính nhận kết nối từ bên ngoài (Mở Port Firewall)
+Mặc định máy tính Windows luôn chặn người lạ truy cập vào để bảo mật. Bạn cần nói với máy tính: *"Hãy cho phép mọi người truy cập vào phần mềm Spring Boot ở Cổng (Port) 80"*.
+
+**Cách làm nhanh:**
+Hãy mở **PowerShell** bằng quyền Administrator trên máy tính của bạn và sao chép dòng lệnh này dán vào:
+```powershell
+New-NetFirewallRule -DisplayName "Open Port 80 for Spring Boot" -Direction Inbound -LocalPort 80 -Protocol TCP -Action Allow
+```
+*Bạn chỉ cần chạy lệnh này 1 lần duy nhất.*
+
+---
+
+### Bước 2: Chỉ đường từ Modem Internet nhà bạn vào máy tính cá nhân (NAT Port)
+Khi người khác tìm đến IP nhà bạn thông qua mạng Internet, thiết bị đầu tiên họ gặp là **Cục Modem Wifi** nhà mạng. Cục Modem này không biết phải dẫn người đó vào máy tính bàn, điện thoại hay là máy tính của bạn. Bạn phải cấu hình cục Modem này để nó "mở cửa" chuyển hướng thẳng vào máy tính của bạn.
+
+1. Bạn mở trình duyệt, đăng nhập vào trang quản trị mạng nhà bạn (thường là `192.168.1.1` hoặc `192.168.0.1`).
+2. Mật khẩu đăng nhập thường được in ở mặt sau cục Modem (Router).
+3. Tìm đến các mục có tên là: **Port Forwarding**, **NAT**, hoặc **Virtual Server**.
+4. Chọn Thêm mới (Add New) và điền các thông tin sau:
+   - **Internal IP (Địa chỉ IP đích):** `172.16.100.222` *(Đây là IP máy tính của bạn hiện tại).*
+   - **Internal Port (Cổng đích):** `80`
+   - **External Port (Cổng bên ngoài):** `80`
+   - **Protocol (Giao thức):** `TCP` hoặc `TCP/UDP`
+5. Lưu lại.
+
+*Lưu ý: Nếu bạn có IP Wan là IP động (thi thoảng bị đổi), hãy liên hệ tổng đài nhà mạng yêu cầu họ chuyển sang "IP Tĩnh (Static IP)" hoặc sử dụng dịch vụ DDNS (Dynamic DNS).*
+
+---
+
+### Bước 3: Trỏ Tên miền (Domain) về IP Modem nhà bạn
+Bây giờ cửa nhà bạn đã mở, bạn cần đem tên miền `elementor-page.org` cắm vào địa chỉ nhà bạn (Public IP).
+
+1. Truy cập vào trang web như **WhatIsMyIP.com** hoặc **ipinfo.io** để xem **Public IP (IPv4)** của mạng nhà bạn là gì (Nó sẽ trông giống như `14.123.x.x` hoặc `118.69.x.x`). Đừng nhầm lẫn với `172.16.100.222` (đó chỉ là IP phòng bạn thôi).
+2. Đăng nhập vào trình quản lý tên miền (nơi bạn đã mua tên miền `elementor-page.org` như GoDaddy, Namecheap, Cloudflare, inet...).
+3. Vào phần **DNS Management** (Quản lý DNS).
+4. Thêm 1 bản ghi (Record) mới với cấu hình sau:
+   - **Type (Loại):** `A`
+   - **Name (Tên):** `@` (hoặc để trống, hoặc ghi là `elementor-page.org`)
+   - **Value/Target (Giá trị/Đích đến):** *[Điền Public IP bạn vừa lấy ở bước 1 vào đây]*
+5. Lưu lại cấu hình DNS.
+
+---
+
+### Kết quả
+Sau khi DNS được cập nhật trên toàn cầu (có thể mất từ 5 phút đến 24 giờ tuỳ dịch vụ cấu hình), khi bất kỳ ai trên thế giới gõ `http://elementor-page.org`, trình duyệt sẽ:
+1. Nhìn vào DNS (Bước 3) -> Đi tới Modem nhà bạn.
+2. Modem nhà bạn thấy có người gõ cửa ở Port 80 (Bước 2) -> Lập tức chuyền dữ liệu thẳng vào máy tính của bạn tại địa chỉ IP `172.16.100.222`.
+3. Máy tính của bạn không chặn Firewall (Bước 1) -> Mở Spring Boot và ngay lập tức gửi mã HTML của Landing Page ra cho họ xem.
+
+**Chúc bạn thành công công bố dự án ra thế giới!**

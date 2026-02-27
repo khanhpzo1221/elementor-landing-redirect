@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementor | Create a Website Now</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #D53F8C 0%, #805AD5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bg-gradient-hero {
+            background: linear-gradient(135deg, #FFDEE9 0%, #B5FFFC 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 antialiased selection:bg-pink-300 selection:text-pink-900">
+
+    <!-- Navbar -->
+    <nav
+        class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#home" class="font-bold text-2xl text-pink-600 tracking-tighter">Elementor</a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-pink-600 font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-gray-600 hover:text-pink-600 font-medium transition-colors">About</a>
+                    <a href="#policies"
+                        class="text-gray-600 hover:text-pink-600 font-medium transition-colors">Policies</a>
+                    <a href="#terms" class="text-gray-600 hover:text-pink-600 font-medium transition-colors">Terms</a>
+                    <a href="#contact"
+                        class="text-gray-600 hover:text-pink-600 font-medium transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="pt-32 pb-20 lg:pt-48 lg:pb-32 bg-gradient-hero min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 mb-6 leading-tight">
+                The most powerful website builder?<br />
+                <span class="gradient-text">You.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto mb-10">
+                Create professional websites with complete creative control. Your vision deserves tools with precision,
+                freedom, and the power to deliver.
+            </p>
+
+            <div class="mt-8 flex justify-center gap-4">
+                <a href="#about"
+                    class="inline-block px-8 py-4 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full text-white font-bold text-lg hover:shadow-lg hover:scale-105 transition-transform duration-200">
+                    Get Started
+                </a>
+                <a href="#contact"
+                    class="inline-block px-8 py-4 bg-white text-gray-800 border-2 border-gray-200 rounded-full font-bold text-lg hover:border-pink-500 hover:text-pink-600 transition-colors duration-200">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center mb-16">
+                <h2 class="text-base text-pink-600 font-semibold tracking-wide uppercase">About Elementor</h2>
+                <p class="mt-2 text-4xl font-extrabold text-gray-900 sm:text-5xl">Build What's Next.</p>
+            </div>
+            <div class="mt-10 max-w-3xl mx-auto text-lg text-gray-500 text-center leading-relaxed">
+                <p>Elementor is the leading WordPress website builder, powering over 21 million sites and 13% of the
+                    web. Built for professionals, creatives, and businesses, Elementor brings design freedom,
+                    performance, and control into one seamless creation experience that helps Web Creators build,
+                    launch, and manage websites that grow with them.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policies Section -->
+    <section id="policies" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Platform Policies</h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">Optimize experience without compromising on
+                    design.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="h-12 w-12 text-pink-500 bg-pink-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Performance</h3>
+                    <p class="text-gray-500">Accelerate your start. We optimize load times to deliver a smooth, lag-free
+                        experience with always-on performance.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div
+                        class="h-12 w-12 text-purple-500 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Accessibility</h3>
+                    <p class="text-gray-500">We are committed to complying with accessibility standards to help users
+                        create the most inclusive and accessible websites possible.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition border border-gray-100">
+                    <div class="h-12 w-12 text-blue-500 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Security</h3>
+                    <p class="text-gray-500">Security you can trust. Manage websites with confidence and control through
+                        comprehensive security measures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Section -->
+    <section id="terms" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-extrabold text-gray-900 mb-8">Terms & Conditions</h2>
+            <div class="prose prose-pink lg:prose-lg text-gray-600">
+                <p>By using our website building tools, you agree to the following core provisions to ensure "Scaling
+                    without chaos":</p>
+                <ul class="list-disc pl-5 space-y-3 mt-4">
+                    <li><strong>Comprehensive Management:</strong> You are granted full creative control (Professional
+                        delivery) through Elementor's Hosting, Email Distribution, and Domain ecosystem.</li>
+                    <li><strong>Flexible Scaling:</strong> Grow your agency, not your overhead. Seamlessly integrate
+                        3rd-party AI applications and plugins without service interruption.</li>
+                    <li><strong>Enterprise Standard:</strong> Utilize expert-led advisory services to unlock the full
+                        potential and optimization of your websites.</li>
+                    <li><strong>Data Handling:</strong> All data must comply with the latest digital security standards
+                        and privacy regulations.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
+            <div>
+                <h2 class="text-3xl font-extrabold mb-6">Contact Us</h2>
+                <p class="text-gray-400 mb-8">We are always ready to support you on your website design and operation
+                    journey. Trusted by those who build the web.</p>
+
+                <div class="space-y-6">
+                    <div class="flex items-center">
+                        <svg class="h-6 w-6 text-pink-500 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                        <span class="text-gray-300">support@elementor.com</span>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="h-6 w-6 text-pink-500 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span class="text-gray-300">1430 Everett, Alameda, CA 94501-4688 USA</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 p-8 rounded-2xl">
+                <form action="#" method="POST" class="space-y-6"
+                    onsubmit="event.preventDefault(); alert('Message feature is in development for demo version!');">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300">Full Name</label>
+                        <input type="text" id="name"
+                            class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300">Email Address</label>
+                        <input type="email" id="email"
+                            class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300">Message</label>
+                        <textarea id="message" rows="4"
+                            class="mt-1 block w-full bg-gray-700 border border-gray-600 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-pink-600 hover:bg-pink-700 text-white font-bold py-3 px-4 rounded-md transition duration-200">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center text-gray-500">
+            &copy; 2026 Elementor. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+
+</html>

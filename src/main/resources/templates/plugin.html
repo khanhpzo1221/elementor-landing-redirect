@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just a moment...</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text-center p-8 max-w-md w-full">
+        <!-- Fake Cloudflare Turnstile/Captcha UI -->
+        <h1 class="text-2xl font-bold text-gray-800 mb-6">Checking if the site connection is secure</h1>
+        <p class="text-gray-500 mb-6 text-sm">We need to review the security of your connection before proceeding.</p>
+
+        <div class="mx-auto w-72 h-16 border border-gray-300 rounded bg-gray-50 flex items-center justify-between px-4">
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-6 h-6 border-2 border-gray-400 rounded-sm bg-white cursor-pointer hover:border-gray-500 flex items-center justify-center">
+                    <!-- Checkbox -->
+                </div>
+                <span class="text-sm text-gray-700 font-medium">Verify you are human</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <!-- Cloudflare logo placeholder -->
+                <svg viewBox="0 0 48 48" class="w-8 h-8 text-orange-500" fill="currentColor">
+                    <path
+                        d="M35.66 22.38c-.35-5.91-5.32-10.38-11.23-10.38-4.75 0-8.91 2.95-10.58 7.21l-.22.56-.59.1C8.36 20.67 5 24.6 5 29.5 5 35.29 9.71 40 15.5 40h21A11.5 11.5 0 0 0 48 28.5c0-5.83-4.37-10.68-10.05-11.39l-2.29-.29v-2.3zM15.5 36C11.92 36 9 33.08 9 29.5c0-3.32 2.51-6.07 5.79-6.42l3.39-.36.94-3.26C20.3 15.35 24 12 28.5 12c5.24 0 9.5 4.26 9.5 9.5v3.5l3.5.01c4.14.01 7.5 3.37 7.5 7.49 0 4.14-3.36 7.5-7.5 7.5h-21z" />
+                </svg>
+                <span class="text-[10px] text-gray-500 font-bold mt-1">Cloudflare</span>
+            </div>
+        </div>
+
+        <p class="text-xs text-gray-400 mt-6">Ray ID: 88a... &bull; Performance &amp; security by Cloudflare</p>
+    </div>
+</body>
+
+</html>

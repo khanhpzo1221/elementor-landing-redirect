@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
 
-    @GetMapping("/plugin/")
+    @GetMapping("/")
     public String home(@RequestParam(value = "gclid", required = false) String gclid) {
         // Redirect nếu URL có chứa tham số gclid (dù có gán giá trị hay không, ví dụ: /?gclid)
         if (gclid != null) {

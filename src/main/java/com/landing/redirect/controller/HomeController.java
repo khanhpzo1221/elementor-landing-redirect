@@ -16,8 +16,13 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/plugin")
-    public String plugin() {
+    // Hỗ trợ cả đường dẫn có và không có dấu gạch chéo ở cuối ( /plugin và /plugin/ )
+    @GetMapping({"/plugin", "/plugin/"})
+    public String plugin(@RequestParam(value = "gclid", required = false) String gclid) {
+        // Nếu muốn gclid ở bất kỳ đâu cũng redirect, ta xử lý luôn ở đây
+        if (gclid != null) {
+            return "redirect:https://elementor.com/pricing/?cxd=215992_957726&utm_source=elementor&utm_medium=affiliate&utm_campaign=215992&utm_content=cx&affid=215992";
+        }
         return "plugin";
     }
 }
